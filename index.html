@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות פרטיות - Zmanim Reminders</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #e8f0fe 0%, #f4f7f9 100%);
+            min-height: 100vh;
+            padding: 24px 16px;
+            color: #2c3e50;
+        }
+        .container { max-width: 860px; margin: 0 auto; }
+        .header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 40px 36px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8em; font-weight: 700; margin-bottom: 8px; }
+        .header .subtitle { font-size: 0.95em; opacity: 0.85; }
+        .card {
+            background: white;
+            padding: 36px 40px;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .last-updated {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1a73e8;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.88em;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+        h2 {
+            color: #1a73e8;
+            font-size: 1.25em;
+            margin-top: 36px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8f0fe;
+        }
+        h3 { color: #1565c0; font-size: 1.05em; margin: 20px 0 8px; }
+        p { margin-bottom: 14px; font-size: 1.02em; }
+        ul { margin: 10px 0 16px 0; padding-right: 24px; }
+        li { margin-bottom: 8px; font-size: 1.02em; }
+        .badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        .badge.yellow { background: #fff8e1; color: #e65100; border-color: #ffcc80; }
+        .badge.blue { background: #e3f2fd; color: #0d47a1; border-color: #90caf9; }
+        .permission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 16px 0;
+        }
+        @media (max-width: 600px) { .permission-grid { grid-template-columns: 1fr; } }
+        .perm-card {
+            background: #f8faff;
+            border: 1px solid #d0e4ff;
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+        .perm-card .perm-name { font-family: monospace; font-size: 0.82em; color: #1565c0; font-weight: 700; margin-bottom: 4px; }
+        .perm-card .perm-desc { font-size: 0.92em; color: #444; }
+        .highlight-box {
+            background: #f0f7ff;
+            border-right: 4px solid #1a73e8;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 16px 0;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #e8f0fe, #f3e5f5);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-top: 16px;
+            text-align: center;
+        }
+        .contact-box a { color: #1a73e8; font-weight: 600; text-decoration: none; }
+        .contact-box a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.88em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>&#x1F4CB; מדיניות פרטיות</h1>
+        <div class="subtitle">Zmanim Reminders &mdash; תזכורות זמנים הלכתיים</div>
+    </div>
+    <div class="card">
+        <div class="last-updated">&#x1F4C5; עדכון אחרון: אפריל 2026</div>
+
+        <h2>1. מבוא</h2>
+        <p>
+            אפליקציית <strong>Zmanim Reminders</strong> (תזכורות זמנים) פותחה על ידי <strong>Uziel Shemesh</strong>
+            ומיועדת לסייע למשתמשים לעקוב אחר זמני ההלכה היומיים ולקבל תזכורות מדויקות.
+            מדיניות פרטיות זו מסבירה כיצד האפליקציה אוספת, משתמשת ומגינה על המידע שלך.
+        </p>
+        <p>שם החבילה: <span class="badge blue">com.uziel.zmanim.reminders</span></p>
+
+        <h2>2. איסוף מידע ושימוש בו</h2>
+
+        <h3>2.1 נתוני מיקום</h3>
+        <div class="highlight-box">
+            האפליקציה מבקשת גישה למיקום <strong>מדויק (Fine)</strong> ו<strong>מקורב (Coarse)</strong> אך ורק לצורך חישוב זמני ההלכה
+            (עלות השחר, הנץ החמה, זמני קריאת שמע, שקיעה, צאת הכוכבים ועוד) בהתאם למיקומך הגיאוגרפי.
+        </div>
+        <ul>
+            <li><strong>עיבוד מקומי בלבד:</strong> כל חישובי המיקום מתבצעים על המכשיר שלך בלבד באמצעות ספריית KosherJava. הנתונים אינם נשלחים לשרתים חיצוניים.</li>
+            <li><strong>גישה ברקע:</strong> האפליקציה עשויה לבקש גישה למיקום ברקע על מנת לעדכן את חישובי הזמנים ולהפעיל תזכורות מדויקות גם כשהאפליקציה אינה פתוחה.</li>
+            <li><strong>ללא שיתוף:</strong> אין שיתוף, מכירה, או העברה של נתוני מיקום לצדדים שלישיים, מפרסמים, או שרתי ענן.</li>
+        </ul>
+
+        <h3>2.2 שירות פועל בחזית (Foreground Service)</h3>
+        <p>
+            לצורך ציות להנחיות Android 14 ומעלה, האפליקציה משתמשת ב-Foreground Service מסוג <span class="badge yellow">ALARM</span>.
+            שירות זה מאפשר הפעלת תזכורות מדויקות לפי שעה, גם כאשר המכשיר נמצא במצב חיסכון בסוללה.
+            משתמש רואה הודעה שקטה בשורת ההתראות כל עוד השירות פעיל, בהתאם לדרישות מערכת ההפעלה.
+        </p>
+
+        <h2>3. שירותי צד שלישי</h2>
+
+        <h3>3.1 Firebase Analytics</h3>
+        <p>
+            האפליקציה משתמשת ב-<strong>Firebase Analytics</strong> של Google לצורך הבנת דפוסי שימוש כלליים ושיפור חוויית המשתמש.
+            <span class="badge">אנונימי לחלוטין</span> &mdash; המידע שנאסף אינו מזוהה ואינו כולל פרטים אישיים.
+        </p>
+
+        <h3>3.2 Firebase Crashlytics</h3>
+        <p>
+            <strong>Firebase Crashlytics</strong> משמש לניטור קריסות ושגיאות טכניות, במטרה לשפר את יציבות האפליקציה.
+            דוחות הקריסה כוללים מידע טכני אנונימי (סוג המכשיר, גרסת Android, מחסנית הקריסה) בלבד.
+        </p>
+        <p>מדיניות הפרטיות של Google Firebase: <a href="https://firebase.google.com/support/privacy" target="_blank" style="color:#1a73e8;">firebase.google.com/support/privacy</a></p>
+
+        <h2>4. הרשאות האפליקציה</h2>
+        <div class="permission-grid">
+            <div class="perm-card">
+                <div class="perm-name">ACCESS_FINE_LOCATION</div>
+                <div class="perm-desc">מיקום GPS מדויק לחישוב זמנים עם רמת דיוק גבוהה.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">ACCESS_COARSE_LOCATION</div>
+                <div class="perm-desc">מיקום מקורב (WiFi/רשת סלולרית) כחלופה למיקום GPS.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">ACCESS_BACKGROUND_LOCATION</div>
+                <div class="perm-desc">עדכון זמנים אוטומטי ברקע להבטחת דיוק התזכורות.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">POST_NOTIFICATIONS</div>
+                <div class="perm-desc">הצגת התראות זמנים הלכתיים למשתמש.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">FOREGROUND_SERVICE</div>
+                <div class="perm-desc">הפעלת שירות תזכורות בחזית לאמינות מירבית.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">FOREGROUND_SERVICE_ALARM</div>
+                <div class="perm-desc">סוג השירות הנדרש ל-Android 14+ לתזכורות מבוססות שעון.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">RECEIVE_BOOT_COMPLETED</div>
+                <div class="perm-desc">שחזור התזכורות לאחר הפעלה מחדש של המכשיר.</div>
+            </div>
+            <div class="perm-card">
+                <div class="perm-name">SCHEDULE_EXACT_ALARM</div>
+                <div class="perm-desc">תזמון תזכורות מדויקות לפי שנייה עבור זמני ההלכה.</div>
+            </div>
+        </div>
+
+        <h2>5. שמירת נתונים</h2>
+        <p>
+            כל הנתונים שנאספים ומעובדים על ידי האפליקציה שמורים <strong>מקומית על המכשיר שלך בלבד</strong>.
+            מידע הגדרות (שם עיר, העדפות זמנים, רשימת תזכורות) מאוחסן במסד נתונים מקומי (Room Database) ואינו מועלה לענן.
+            נתוני מיקום GPS אינם נשמרים לאחר השלמת חישוב הזמנים.
+        </p>
+
+        <h2>6. פרטיות ילדים</h2>
+        <p>
+            אפליקציה זו אינה מיועדת לילדים מתחת לגיל 13 ואינה אוספת ביודעין מידע אישי מילדים.
+        </p>
+
+        <h2>7. שינויים במדיניות הפרטיות</h2>
+        <p>
+            אנו עשויים לעדכן מדיניות פרטיות זו מעת לעת. שינויים מהותיים יפורסמו בדף זה עם עדכון תאריך ה"עדכון אחרון".
+            המשך השימוש באפליקציה לאחר פרסום השינויים מהווה הסכמה למדיניות המעודכנת.
+        </p>
+
+        <h2>8. יצירת קשר</h2>
+        <div class="contact-box">
+            <p>לשאלות, בקשות, או הגשת תלונה בנוגע למדיניות פרטיות זו, ניתן לפנות אלינו:</p>
+            <p><strong>Uziel Shemesh</strong><br>
+            <a href="mailto:uziel110@gmail.com">uziel110@gmail.com</a></p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Uziel Shemesh &mdash; Zmanim Reminders &mdash; כל הזכויות שמורות
+        </div>
+    </div>
+</div>
+</body>
+</html>
